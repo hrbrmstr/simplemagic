@@ -68,7 +68,7 @@ list.files(system.file("extdat", package="simplemagic"), full.names=TRUE) %>%
     )
   }) %>% 
   unnest() %>% 
-  print(n=82)
+  print(n=100)
 ```
 
     ## # A tibble: 85 x 2
@@ -156,7 +156,9 @@ list.files(system.file("extdat", package="simplemagic"), full.names=TRUE) %>%
     ## 80 test.xcf                   application/x-xcf                                                        
     ## 81 test.xml                   application/xml                                                          
     ## 82 test.xpm                   image/x-xbitmap                                                          
-    ## # ... with 3 more rows
+    ## 83 test.xpm                   image/x-xpixmap                                                          
+    ## 84 test.xpm                   image/xpm                                                                
+    ## 85 test.zip                   application/zip
 
 ## Code of Conduct
 

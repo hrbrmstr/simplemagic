@@ -61,7 +61,7 @@ list.files(system.file("extdat", package="simplemagic"), full.names=TRUE) %>%
     )
   }) %>% 
   unnest() %>% 
-  print(n=82)
+  print(n=100)
 ```
 
 ## Code of Conduct
