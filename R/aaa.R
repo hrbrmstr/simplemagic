@@ -1,3 +1,7 @@
+#' File extension-to-MIME mapping data frame
+#'
+#' @docType data
+#' @export
 structure(list(extension = c("pyc", "dwg", "ez", "aw", "arj",
 "atom", "xml", "atomcat", "atomsvc", "mm", "mme", "hqx", "hqx",
 "boo", "book", "ccxml", "cdf", "cdmia", "cdmic", "cdmid", "cdmio",
@@ -813,4 +817,4 @@ structure(list(extension = c("pyc", "dwg", "ez", "aw", "arj",
 "text/x-pascal", "video/jpm", "video/mj2", "video/mp4", "video/mpeg",
 "video/quicktime", "video/vnd.mpegurl", "video/x-ms-asf")), row.names = c(NA,
 -1763L), class = c("tbl_df", "tbl", "data.frame"), .Names = c("extension",
-"mime_type")) -> .ext_to_mime
+"mime_type")) -> simplemagic_mime_db

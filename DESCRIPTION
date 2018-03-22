@@ -11,7 +11,8 @@ Maintainer: Bob Rudis <bob@rud.is>
 Description: 'MIME' types are shorthand descriptors for file contents and can be
     determined from "magic" bytes in file headers, file contents or intuited from
     file extensions. Tools are provided to perform limited "magic" tests as well
-    as mapping 'MIME' types from a database of over 1,500 extension mappings.
+    as mapping 'MIME' types from a database of over 1,500 extension mappings. It is
+    useful as a more portable alternative to the 'wand' package.
 URL: https://github.com/hrbrmstr/simplemagic
 BugReports: https://github.com/hrbrmstr/simplemagic/issues
 Encoding: UTF-8

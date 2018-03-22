@@ -6,8 +6,18 @@
 \alias{simplemagic-package}
 \title{Lightweight File 'MIME' Type Detection Based On Contents or Extension}
 \description{
-Lightweight File 'MIME' Type Detection Based On Contents or Extension
+Provides a more portable/ligtweight alternative to the \code{wand} package.
 }
+\section{Some important details}{
+
+
+The header checking is minimal (i.e. nowhere near as comprehensive as \code{libmagic}) but
+covers quite a bit of ground. If there are content-check types from
+\href{https://github.com/threatstack/libmagic/tree/master/magic/}{magic sources}
+that you would like coded into the package, please file an issue and
+\emph{include the full line(s)} from that linked \code{magic.tab} that you would like mapped.
+}
+
 \author{
 Bob Rudis (bob@rud.is)
 }

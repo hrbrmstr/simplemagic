@@ -9,10 +9,19 @@ get_content_type(path)
 \arguments{
 \item{path}{path to a file}
 }
+\value{
+character vector
+}
 \description{
-Discover MIME type of a file based on contents
+There are a limited number of header "magic" bytes checked directly by
+this function but cover quite a bit of ground. After that, \code{\link[=guess_content_type]{guess_content_type()}} is called which uses
+file extension-to-MIME mappings. File an issue or PR if more magic-byte-level
+comparisons are required/desired. If no match is found, \code{???} is returned.
 }
 \details{
 Initial in-R header mapping logic borrowed from \code{MimeTypes.java} from
 \href{https://github.com/Servoy/servoy-client}{servoy-client}
+}
+\examples{
+get_content_type(system.file("extdat", "test.pdf", package="simplemagic"))
 }

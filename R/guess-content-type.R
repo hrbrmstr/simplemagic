@@ -1,5 +1,9 @@
 #' Guess MIME type from filename (extension)
 #'
+#' Uses an internal database of over 1,500 file extension-to-MIME mappings to
+#' return one or more associated types for a given input path. If no match is
+#' found, `???` is returned.
+#'
 #' @details
 #' Incorporates standard IANA MIME extension mappings and those from
 #' [`servoy-client`](https://github.com/Servoy/servoy-client) and
@@ -8,7 +12,10 @@
 #'
 #' @md
 #' @param path path to file
+#' @return character vector
 #' @export
+#' @examples
+#' guess_content_type(system.file("extdat", "test.pdf", package="simplemagic"))
 guess_content_type <- function(path) {
 
   path <- path.expand(path)
@@ -16,7 +23,7 @@ guess_content_type <- function(path) {
 
   extension <- trimws(tolower(tools::file_ext(path)))
 
-  res <- .ext_to_mime[(.ext_to_mime$extension == extension),]$mime_type
+  res <- simplemagic_mime_db[(simplemagic_mime_db$extension == extension),]$mime_type
 
   if (length(res) == 0) return("???")
 

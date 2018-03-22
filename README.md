@@ -11,11 +11,14 @@ from file extensions. Tools are provided to perform limited “magic”
 tests as well as mapping ‘MIME’ types from a database of over 1,500
 extension mappings.
 
+Provides a more portable/ligtweight alternative to the `wand` package.
+
 ## SOME IMPORTANT DETAILS
 
 The header checking is minimal (i.e. nowhere near as comprehensive as
-`libmagic`). If there are content-check types from
-[`magic.tab`](https://opensource.apple.com/source/ksh/ksh-13/ksh/src/lib/libast/misc/magic.tab.auto.html)
+`libmagic`) but covers quite a bit of ground. If there are content-check
+types from [`magic
+sources`](https://github.com/threatstack/libmagic/tree/master/magic/)
 that you would like coded into the package, please file an issue and
 *include the full line(s)* from that linked `magic.tab` that you would
 like mapped.
@@ -24,6 +27,7 @@ like mapped.
 
   - `get_content_type`: Discover MIME type of a file based on contents
   - `guess_content_type`: Guess MIME type from filename (extension)
+  - `simplemagic_mime_db`: File extension-to-MIME mapping data frame
 
 The following functions are implemented:
 
@@ -124,7 +128,7 @@ list.files(system.file("extdat", package="simplemagic"), full.names=TRUE) %>%
     ## 62 test.sh                    application/x-shar                                                       
     ## 63 test.sh                    text/x-script.sh                                                         
     ## 64 test.sh                    text/x-sh                                                                
-    ## 65 test.tar                   application/x-tar                                                        
+    ## 65 test.tar                   application/pax                                                          
     ## 66 test.tar.gz                application/octet-stream                                                 
     ## 67 test.tar.gz                application/x-compressed                                                 
     ## 68 test.tar.gz                application/x-gzip                                                       
