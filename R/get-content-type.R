@@ -92,9 +92,15 @@ get_content_type <- function(path) {
   if (all(c(0x52,0x49,0x46,0x46) == hdr[1:4])) return("audio/x-wav") # "RIFF"
 
   if (all(c(0x50, 0x4b) == hdr[1:2])) { # "PK"
+
+    office_type <- check_office(hdr, path)
+    if (length(office_type) > 0) return(office_type)
+
     guessed_name <- guess_content_type(path)
     if ((length(guessed_name) == 1) && (guessed_name != "???")) return(guessed_name)
+
     return("application/zip")
+
   }
 
   if (all(c(0x5a,0x4d) == hdr[1:2])) return("x-system/exe")
