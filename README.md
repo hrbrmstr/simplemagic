@@ -2,10 +2,12 @@
 [![Project Status: Active - The project has reached a stable, usable
 state and is being actively
 developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
-[![Travis-CI Build
-Status](https://travis-ci.org/hrbrmstr/simplemagic?branch=master)](https://travis-ci.org/hrbrmstr/simplemagic)
+[![Travis-CIBuild
+Status](https://travis-ci.org/hrbrmstr/simplemagic.svg?branch=master)](https://travis-ci.org/hrbrmstr/simplemagic)
 [![AppVeyor Build
 Status](https://ci.appveyor.com/api/projects/status/github/hrbrmstr/simplemagic?branch=master&svg=true)](https://ci.appveyor.com/project/hrbrmstr/simplemagic)
+[![Coverage
+Status](https://img.shields.io/codecov/c/github/hrbrmstr/simplemagic/master.svg)](https://codecov.io/github/hrbrmstr/simplemagic?branch=master)
 
 # simplemagic
 
@@ -155,3 +157,9 @@ list.files(system.file("extdat", package="simplemagic"), full.names=TRUE) %>%
     ## 81 test.xml                   application/xml                                                          
     ## 82 test.xpm                   image/x-xbitmap                                                          
     ## # ... with 3 more rows
+
+## Code of Conduct
+
+Please note that this project is released with a [Contributor Code of
+Conduct](CONDUCT.md). By participating in this project you agree to
+abide by its terms.
