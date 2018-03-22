@@ -1,4 +1,12 @@
 
+[![Project Status: Active - The project has reached a stable, usable
+state and is being actively
+developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
+[![Travis-CI Build
+Status](https://travis-ci.org/hrbrmstr/simplemagic?branch=master)](https://travis-ci.org/hrbrmstr/simplemagic)
+[![AppVeyor Build
+Status](https://ci.appveyor.com/api/projects/status/github/hrbrmstr/simplemagic?branch=master&svg=true)](https://ci.appveyor.com/project/hrbrmstr/simplemagic)
+
 # simplemagic
 
 Lightweight File ‘MIME’ Type Detection Based On Contents or Extension
@@ -61,88 +69,89 @@ list.files(system.file("extdat", package="simplemagic"), full.names=TRUE) %>%
   print(n=82)
 ```
 
-    ## # A tibble: 82 x 2
+    ## # A tibble: 85 x 2
     ##    fil                        mime                                                                     
     ##    <chr>                      <chr>                                                                    
-    ##  1 test_1.2.class             application/java-vm                                                      
-    ##  2 test_1.3.class             application/java-vm                                                      
-    ##  3 test_1.4.class             application/java-vm                                                      
-    ##  4 test_1.5.class             application/java-vm                                                      
-    ##  5 test_128_44_jstereo.mp3    audio/mp3                                                                
-    ##  6 test_excel_2000.xls        application/msword                                                       
-    ##  7 test_excel_spreadsheet.xml application/xml                                                          
-    ##  8 test_excel_web_archive.mht message/rfc822                                                           
-    ##  9 test_excel.xlsm            application/zip                                                          
-    ## 10 test_excel.xlsx            application/vnd.openxmlformats-officedocument.spreadsheetml.sheet        
-    ## 11 test_nocompress.tif        image/tiff                                                               
-    ## 12 test_powerpoint.pptm       application/zip                                                          
-    ## 13 test_powerpoint.pptx       application/vnd.openxmlformats-officedocument.presentationml.presentation
-    ## 14 test_word_2000.doc         application/msword                                                       
-    ## 15 test_word_6.0_95.doc       application/msword                                                       
-    ## 16 test_word.docm             application/zip                                                          
-    ## 17 test_word.docx             application/vnd.openxmlformats-officedocument.wordprocessingml.document  
-    ## 18 test.au                    audio/basic                                                              
-    ## 19 test.bin                   application/mac-binary                                                   
-    ## 20 test.bin                   application/macbinary                                                    
-    ## 21 test.bin                   application/octet-stream                                                 
-    ## 22 test.bin                   application/x-binary                                                     
-    ## 23 test.bin                   application/x-macbinary                                                  
-    ## 24 test.bmp                   image/bmp                                                                
-    ## 25 test.dtd                   application/xml-dtd                                                      
-    ## 26 test.emf                   application/x-msmetafile                                                 
-    ## 27 test.eps                   application/postscript                                                   
-    ## 28 test.fli                   video/flc                                                                
-    ## 29 test.fli                   video/fli                                                                
-    ## 30 test.fli                   video/x-fli                                                              
-    ## 31 test.gif                   image/gif                                                                
-    ## 32 test.ico                   image/x-icon                                                             
-    ## 33 test.java                  text/plain                                                               
-    ## 34 test.java                  text/x-java                                                              
-    ## 35 test.java                  text/x-java-source                                                       
-    ## 36 test.jpg                   image/jpeg                                                               
-    ## 37 test.mp3                   audio/mp3                                                                
-    ## 38 test.odt                   application/vnd.oasis.opendocument.text                                  
-    ## 39 test.ogg                   application/ogg                                                          
-    ## 40 test.ogg                   audio/ogg                                                                
-    ## 41 test.pcx                   image/pcx                                                                
-    ## 42 test.pcx                   image/x-pcx                                                              
-    ## 43 test.pdf                   application/pdf                                                          
-    ## 44 test.pl                    text/plain                                                               
-    ## 45 test.pl                    text/x-perl                                                              
-    ## 46 test.pl                    text/x-script.perl                                                       
-    ## 47 test.png                   image/png                                                                
-    ## 48 test.pnm                   application/x-portable-anymap                                            
-    ## 49 test.pnm                   image/x-portable-anymap                                                  
-    ## 50 test.ppm                   image/x-portable-pixmap                                                  
-    ## 51 test.ppt                   application/msword                                                       
-    ## 52 test.ps                    application/postscript                                                   
-    ## 53 test.psd                   image/photoshop                                                          
-    ## 54 test.py                    text/x-python                                                            
-    ## 55 test.py                    text/x-script.phyton                                                     
-    ## 56 test.rtf                   application/rtf                                                          
-    ## 57 test.rtf                   application/x-rtf                                                        
-    ## 58 test.rtf                   text/richtext                                                            
-    ## 59 test.rtf                   text/rtf                                                                 
-    ## 60 test.sh                    application/x-bsh                                                        
-    ## 61 test.sh                    application/x-sh                                                         
-    ## 62 test.sh                    application/x-shar                                                       
-    ## 63 test.sh                    text/x-script.sh                                                         
-    ## 64 test.sh                    text/x-sh                                                                
-    ## 65 test.tar                   application/pax                                                          
-    ## 66 test.tar.gz                application/octet-stream                                                 
-    ## 67 test.tar.gz                application/x-compressed                                                 
-    ## 68 test.tar.gz                application/x-gzip                                                       
-    ## 69 test.tga                   image/x-tga                                                              
-    ## 70 test.txt                   text/plain                                                               
-    ## 71 test.txt.gz                application/octet-stream                                                 
-    ## 72 test.txt.gz                application/x-compressed                                                 
-    ## 73 test.txt.gz                application/x-gzip                                                       
-    ## 74 test.wav                   audio/x-wav                                                              
-    ## 75 test.wmf                   application/x-msmetafile                                                 
-    ## 76 test.wmf                   windows/metafile                                                         
-    ## 77 test.xcf                   application/x-xcf                                                        
-    ## 78 test.xml                   application/xml                                                          
-    ## 79 test.xpm                   image/x-xbitmap                                                          
-    ## 80 test.xpm                   image/x-xpixmap                                                          
-    ## 81 test.xpm                   image/xpm                                                                
-    ## 82 test.zip                   application/zip
+    ##  1 actions.csv                application/vnd.openxmlformats-officedocument.spreadsheetml.sheet        
+    ##  2 actions.txt                application/vnd.openxmlformats-officedocument.spreadsheetml.sheet        
+    ##  3 actions.xlsx               application/vnd.openxmlformats-officedocument.spreadsheetml.sheet        
+    ##  4 test_1.2.class             application/java-vm                                                      
+    ##  5 test_1.3.class             application/java-vm                                                      
+    ##  6 test_1.4.class             application/java-vm                                                      
+    ##  7 test_1.5.class             application/java-vm                                                      
+    ##  8 test_128_44_jstereo.mp3    audio/mp3                                                                
+    ##  9 test_excel_2000.xls        application/msword                                                       
+    ## 10 test_excel_spreadsheet.xml application/xml                                                          
+    ## 11 test_excel_web_archive.mht message/rfc822                                                           
+    ## 12 test_excel.xlsm            application/zip                                                          
+    ## 13 test_excel.xlsx            application/vnd.openxmlformats-officedocument.spreadsheetml.sheet        
+    ## 14 test_nocompress.tif        image/tiff                                                               
+    ## 15 test_powerpoint.pptm       application/zip                                                          
+    ## 16 test_powerpoint.pptx       application/vnd.openxmlformats-officedocument.presentationml.presentation
+    ## 17 test_word_2000.doc         application/msword                                                       
+    ## 18 test_word_6.0_95.doc       application/msword                                                       
+    ## 19 test_word.docm             application/zip                                                          
+    ## 20 test_word.docx             application/vnd.openxmlformats-officedocument.wordprocessingml.document  
+    ## 21 test.au                    audio/basic                                                              
+    ## 22 test.bin                   application/mac-binary                                                   
+    ## 23 test.bin                   application/macbinary                                                    
+    ## 24 test.bin                   application/octet-stream                                                 
+    ## 25 test.bin                   application/x-binary                                                     
+    ## 26 test.bin                   application/x-macbinary                                                  
+    ## 27 test.bmp                   image/bmp                                                                
+    ## 28 test.dtd                   application/xml-dtd                                                      
+    ## 29 test.emf                   application/x-msmetafile                                                 
+    ## 30 test.eps                   application/postscript                                                   
+    ## 31 test.fli                   video/flc                                                                
+    ## 32 test.fli                   video/fli                                                                
+    ## 33 test.fli                   video/x-fli                                                              
+    ## 34 test.gif                   image/gif                                                                
+    ## 35 test.ico                   image/x-icon                                                             
+    ## 36 test.java                  text/plain                                                               
+    ## 37 test.java                  text/x-java                                                              
+    ## 38 test.java                  text/x-java-source                                                       
+    ## 39 test.jpg                   image/jpeg                                                               
+    ## 40 test.mp3                   audio/mp3                                                                
+    ## 41 test.odt                   application/vnd.oasis.opendocument.text                                  
+    ## 42 test.ogg                   application/ogg                                                          
+    ## 43 test.ogg                   audio/ogg                                                                
+    ## 44 test.pcx                   image/pcx                                                                
+    ## 45 test.pcx                   image/x-pcx                                                              
+    ## 46 test.pdf                   application/pdf                                                          
+    ## 47 test.pl                    text/plain                                                               
+    ## 48 test.pl                    text/x-perl                                                              
+    ## 49 test.pl                    text/x-script.perl                                                       
+    ## 50 test.png                   image/png                                                                
+    ## 51 test.pnm                   application/x-portable-anymap                                            
+    ## 52 test.pnm                   image/x-portable-anymap                                                  
+    ## 53 test.ppm                   image/x-portable-pixmap                                                  
+    ## 54 test.ppt                   application/msword                                                       
+    ## 55 test.ps                    application/postscript                                                   
+    ## 56 test.psd                   image/photoshop                                                          
+    ## 57 test.py                    text/x-python                                                            
+    ## 58 test.py                    text/x-script.phyton                                                     
+    ## 59 test.rtf                   application/rtf                                                          
+    ## 60 test.rtf                   application/x-rtf                                                        
+    ## 61 test.rtf                   text/richtext                                                            
+    ## 62 test.rtf                   text/rtf                                                                 
+    ## 63 test.sh                    application/x-bsh                                                        
+    ## 64 test.sh                    application/x-sh                                                         
+    ## 65 test.sh                    application/x-shar                                                       
+    ## 66 test.sh                    text/x-script.sh                                                         
+    ## 67 test.sh                    text/x-sh                                                                
+    ## 68 test.tar                   application/pax                                                          
+    ## 69 test.tar.gz                application/octet-stream                                                 
+    ## 70 test.tar.gz                application/x-compressed                                                 
+    ## 71 test.tar.gz                application/x-gzip                                                       
+    ## 72 test.tga                   image/x-tga                                                              
+    ## 73 test.txt                   text/plain                                                               
+    ## 74 test.txt.gz                application/octet-stream                                                 
+    ## 75 test.txt.gz                application/x-compressed                                                 
+    ## 76 test.txt.gz                application/x-gzip                                                       
+    ## 77 test.wav                   audio/x-wav                                                              
+    ## 78 test.wmf                   application/x-msmetafile                                                 
+    ## 79 test.wmf                   windows/metafile                                                         
+    ## 80 test.xcf                   application/x-xcf                                                        
+    ## 81 test.xml                   application/xml                                                          
+    ## 82 test.xpm                   image/x-xbitmap                                                          
+    ## # ... with 3 more rows

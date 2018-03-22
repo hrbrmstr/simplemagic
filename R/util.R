@@ -1,13 +1,15 @@
-seq_in <- function(a, b) {
+seq_in <- function(source_vector, pattern_vector) {
 
   which(
     Reduce(
       '+',
       lapply(
-        seq_along(y <- lapply(b, '==', a)),
-        function(x) { y[[x]][x:(length(a) - length(b) +x)] }
+        seq_along(y <- lapply(pattern_vector, '==', source_vector)),
+        function(x) {
+          y[[x]][x:(length(source_vector) - length(pattern_vector) + x)]
+        }
       )
-    ) == length(b)
+    ) == length(pattern_vector)
   )
 
 }
